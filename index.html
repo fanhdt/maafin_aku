@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maafin Aku Dong 🥺</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 2rem;
+        box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+        text-align: center;
+        max-width: 90vw;
+        width: 500px;
+        border: 3px solid #ffb6c1;
+        position: relative;
+        overflow: visible;
+      }
+
+      .heart {
+        position: absolute;
+        color: #ff69b4;
+        font-size: 20px;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .heart:nth-child(1) {
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .heart:nth-child(2) {
+        top: 20%;
+        right: 15%;
+        animation-delay: 1s;
+      }
+      .heart:nth-child(3) {
+        bottom: 30%;
+        left: 20%;
+        animation-delay: 2s;
+      }
+      .heart:nth-child(4) {
+        bottom: 15%;
+        right: 10%;
+        animation-delay: 1.5s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+
+      .gif-container {
+        margin: 1rem 0;
+      }
+
+      .gif {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid #ff69b4;
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      h1 {
+        color: #ff1493;
+        font-size: 2rem;
+        margin: 1rem 0;
+        text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        font-weight: 700;
+      }
+
+      .apology-text {
+        color: #d63384;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        line-height: 1.6;
+        font-weight: 400;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column; /* Mengubah arah flex menjadi kolom */
+        gap: 15px; /* Memberi jarak antar tombol */
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+        position: relative;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: "Poppins", sans-serif;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .btn-yes {
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        color: white;
+        border: 2px solid #ff69b4;
+      }
+
+      .btn-yes:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(255, 105, 180, 0.4);
+      }
+
+      .btn-no {
+        background: linear-gradient(45deg, #ffc0cb, #ffb6c1);
+        color: #d63384;
+        border: 2px solid #ffb6c1;
+        /* Menghapus 'position: absolute' agar posisi awal normal */
+      }
+
+      .btn-no:hover {
+        transform: scale(1.05);
+      }
+
+      .success-container {
+        display: none;
+      }
+
+      .success-gif {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid #32cd32;
+        margin: 1rem auto;
+        animation: celebrate 1s ease-in-out;
+      }
+
+      @keyframes celebrate {
+        0% {
+          transform: scale(0);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .wa-btn {
+        background: linear-gradient(45deg, #25d366, #128c7e);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .wa-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
+      }
+
+      .sparkle {
+        position: absolute;
+        color: #ffd700;
+        font-size: 24px;
+        animation: sparkle 2s infinite;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          margin: 1rem;
+          padding: 1.5rem;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .apology-text {
+          font-size: 1rem;
+        }
+
+        .gif {
+          width: 120px;
+          height: 120px;
+        }
+
+        .success-gif {
+          width: 150px;
+          height: 150px;
+        }
+
+        .button-container {
+          gap: 15px;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart">💖</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">💝</div>
+
+    <div class="container">
+      <div class="main-content">
+        <h1>Maafin Aku Dong 🥺</h1>
+
+        <div class="gif-container">
+          <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute cat gif" class="gif" />
+        </div>
+
+        <div class="apology-text">
+          Walau kentut kamu bagai petir ⚡<br />
+          Tapi manis banget kalau nyengir 😊<br />
+          Maafin kesalahan aku ya sayang 💕<br />
+          Tanpa kamu hidup terasa hambar seperti nasi tanpa garam 🍚
+        </div>
+
+        <div class="button-container">
+          <button class="btn btn-yes" onclick="forgive()">Dimaafin ❤️</button>
+          <button class="btn btn-no" id="noBtn" onclick="moveButton()">Enggak 😤</button>
+        </div>
+      </div>
+
+      <div class="success-container" id="successContainer">
+        <h1>Yeayyy! Makasih Sayang 🥰</h1>
+
+        <div class="gif-container">
+          <img src="https://media.tenor.com/q_zo_A3taR0AAAAi/tkthao219-bubududu.gif" alt="Happy celebration gif" class="success-gif" />
+        </div>
+
+        <div class="apology-text">
+          Aku janji bakal lebih baik lagi 💪<br />
+          Love you to the moon and back 🌙✨
+        </div>
+
+        <a href="https://wa.me/" class="wa-btn" target="_blank"> Buka Blokiran WhatsApp 📱💚 </a>
+
+        <div class="sparkle" style="top: 20%; left: 15%">✨</div>
+        <div class="sparkle" style="top: 30%; right: 20%; animation-delay: 0.5s">⭐</div>
+        <div class="sparkle" style="bottom: 25%; left: 25%; animation-delay: 1s">💫</div>
+        <div class="sparkle" style="bottom: 35%; right: 15%; animation-delay: 1.5s">✨</div>
+      </div>
+    </div>
+
+    <script>
+      let clickCount = 0;
+      const noButton = document.getElementById("noBtn");
+      const buttonTexts = [
+        "Enggak 😤",
+        "Gak mau! 😠",
+        "Ogah ah 🙄",
+        "Males 😴",
+        "Nope! 🚫",
+        "Jangan! ✋",
+        "Gak bisa 🙅‍♀️",
+        "Masih marah 😡",
+        "Belum mau 💔",
+        "Mikir dulu 🤔",
+        "Hmm... nggak 😏",
+        "Kapan-kapan 📅",
+        "Mungkin besok 🌅",
+        "Lagi galau 😞",
+        "Susah nih 😬",
+      ];
+
+      function moveButton() {
+        clickCount++;
+
+        // Pada klik pertama, ubah posisi menjadi 'fixed' agar bisa bergerak bebas
+        if (clickCount === 1) {
+          noButton.style.position = "fixed";
+        }
+
+        // Ganti teks button
+        const textIndex = clickCount % buttonTexts.length;
+        noButton.textContent = buttonTexts[textIndex];
+
+        // Dapatkan ukuran tombol
+        const buttonRect = noButton.getBoundingClientRect();
+
+        // Hitung posisi maksimal agar tombol tetap di dalam layar (viewport)
+        const maxX = window.innerWidth - buttonRect.width;
+        const maxY = window.innerHeight - buttonRect.height;
+
+        // Hasilkan posisi acak baru
+        const newX = Math.random() * maxX;
+        const newY = Math.random() * maxY;
+
+        // Terapkan posisi baru
+        noButton.style.left = newX + "px";
+        noButton.style.top = newY + "px";
+
+        // Tambahkan animasi getar (shake)
+        noButton.style.animation = "shake 0.5s ease-in-out";
+        setTimeout(() => {
+          noButton.style.animation = "";
+        }, 500);
+      }
+
+      function forgive() {
+        // Sembunyikan konten utama
+        document.querySelector(".main-content").style.display = "none";
+
+        // Tampilkan pesan sukses
+        document.getElementById("successContainer").style.display = "block";
+
+        // Tambahkan efek perayaan
+        createConfetti();
+      }
+
+      function createConfetti() {
+        const colors = ["#ff69b4", "#ff1493", "#ffc0cb", "#ffb6c1", "#ffd700"];
+
+        for (let i = 0; i < 50; i++) {
+          setTimeout(() => {
+            const confetti = document.createElement("div");
+            confetti.innerHTML = ["🎉", "🎊", "💖", "💕", "⭐", "✨"][Math.floor(Math.random() * 6)];
+            confetti.style.position = "fixed";
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.top = "-10px";
+            confetti.style.fontSize = "20px";
+            confetti.style.zIndex = "1000";
+            confetti.style.pointerEvents = "none";
+            confetti.style.animation = "fall 3s linear forwards";
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+              confetti.remove();
+            }, 3000);
+          }, i * 100);
+        }
+      }
+
+      // Tambahkan animasi getar (shake) dan jatuh (fall) ke CSS
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            
+            @keyframes fall {
+                0% {
+                    transform: translateY(-10px) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+      document.head.appendChild(style);
+
+      // Menghapus script posisi awal karena sudah diatur oleh CSS
+    </script>
+  </body>
+</html>
